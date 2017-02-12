@@ -28,34 +28,11 @@
 </nav>
 
   <main class="archive">
-  
-    <article class="grid">
-  <h1 class="article-title grid-item">
-    <a href="/2017/01/31/新的一年/">新的一年</a>
-  </h1>
+  <% page.posts.each(function(post){ %>
+    <%- partial('./_partial/archive', {post: post, index: false}) %>
+  <% }) %>
 
-  <div class="article-meta">
-    <span class="article-date">Jan 31 2017</span>
-  </div>
-</article>
-
-  
-    <article class="grid">
-  <h1 class="article-title grid-item">
-    <a href="/2015/07/13/說說執行力/">說說執行力</a>
-  </h1>
-
-  <div class="article-meta">
-    <span class="article-date">Jul 13 2015</span>
-  </div>
-</article>
-
-  
-
-  <nav class="page-nav">
-  <span class="page-number current">1</span>
-</nav>
-
+  <%- partial('./_widget/paginator') %>
 </main>
 
 </body>
