@@ -28,11 +28,23 @@
 </nav>
 
   <main class="archive">
-  <% page.posts.each(function(post){ %>
-    <%- partial('./_partial/archive', {post: post, index: false}) %>
-  <% }) %>
+  
+    <article class="grid">
+  <h1 class="article-title grid-item">
+    <a href="/2017/01/31/新的一年/">新的一年</a>
+  </h1>
 
-  <%- partial('./_widget/paginator') %>
+  <div class="article-meta">
+    <span class="article-date">Jan 31 2017</span>
+  </div>
+</article>
+
+  
+
+  <nav class="page-nav">
+  <span class="page-number current">1</span>
+</nav>
+
 </main>
 
 </body>
