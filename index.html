@@ -53,25 +53,21 @@
 </header>
 
 <main class="index">
-  
+  <% page.posts.each(function(post){ %>
     <article>
       <h1 class="article-title">
-        <a href="/2017/01/31/新的一年/">新的一年</a>
+        <a href="<%- url_for(post.path) %>"><%- post.title %></a>
       </h1>
 
       <div class="article-entry">
-        
+        <%- post.foreword %>
       </div>
 
       <div class="article-meta">
-        <span class="article-date">Jan 31 2017</span>
+        <span class="article-date"><%- date(post.date, 'MMM DD YYYY') %></span>
       </div>
     </article>
-  
-
-  <nav class="page-nav">
-  <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &rarr;</a>
-</nav>
+  <% }) %>
 
 </main>
 
