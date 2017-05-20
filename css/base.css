@@ -441,3 +441,11 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #0085a1;
 }
+.index-footer {
+  padding: 50px 0 65px;
+}
+.index-footer .copyright {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 0;
+}
