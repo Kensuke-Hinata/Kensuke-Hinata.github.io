@@ -94,17 +94,31 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <% for (var i in theme.menu){ %>
+                
                     <li>
-                        <a href="<%- theme.menu[i].url ? url_for(theme.menu[i].url) : url_for(theme.menu[i]) %>">
-                            <% if (theme.menu[i].icon) { %>
-                                <i class="fa fa-<%= theme.menu[i].icon %> fa-stack-2x"></i>
-                            <% } else { %>
-                                <%= i %>
-                            <% } %>
+                        <a href="/">
+                            
+                                Home
+                            
                         </a>
                     </li>
-                <% } %>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/Kensuke-Hinata">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
             </ul>
         </div>
         <!-- /.navbar-collapse -->
