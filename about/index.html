@@ -10,10 +10,9 @@
 
     <!--Description-->
     
-        <meta name="description" content="&amp;lt;div style=&amp;quot;background: #715d5d; padding: 10px; height: 120px&amp;quot;&amp;gt;
-程序猿，攻城獅，算法競賽醬油選手，業餘歌手，競技體育愛好者，動漫迷，電影帝，連續劇控，自由意志主義者。
-&amp;lt;/div&amp;gt;
-&amp;lt;d">
+        <meta name="description" content="程序猿，攻城獅，算法競賽醬油選手，業餘歌手，競技體育愛好者，動漫迷，電影帝，連續劇控，自由意志主義者。
+
+    Github    豆瓣    知乎    微博">
     
 
     <!--Author-->
@@ -97,31 +96,17 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                
+                <% for (var i in theme.menu){ %>
                     <li>
-                        <a href="/">
-                            
-                                Home
-                            
+                        <a href="<%- theme.menu[i].url ? url_for(theme.menu[i].url) : url_for(theme.menu[i]) %>">
+                            <% if (theme.menu[i].icon) { %>
+                                <i class="fa fa-<%= theme.menu[i].icon %> fa-stack-2x"></i>
+                            <% } else { %>
+                                <%= i %>
+                            <% } %>
                         </a>
                     </li>
-                
-                    <li>
-                        <a href="/archives">
-                            
-                                Archives
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="https://github.com/Kensuke-Hinata">
-                            
-                                <i class="fa fa-github fa-stack-2x"></i>
-                            
-                        </a>
-                    </li>
-                
+                <% } %>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -165,17 +150,11 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>&lt;div style=&quot;background: #715d5d; padding: 10px; height: 120px&quot;&gt;
-程序猿，攻城獅，算法競賽醬油選手，業餘歌手，競技體育愛好者，動漫迷，電影帝，連續劇控，自由意志主義者。
-&lt;/div&gt;</p>
-<p>&lt;div style=&quot;background: beige; margin: 10px 0; padding: 10px&quot;&gt;
-&lt;a href=&quot;https://github.com/Kensuke-Hinata&quot;&gt;Github&lt;/a&gt;
-&lt;a href=&quot;https://www.douban.com/people/redocpot/&quot;&gt;豆瓣&lt;/a&gt;
-&lt;a href=&quot;https://www.zhihu.com/people/kensuke-hinata/activities&quot;&gt;知乎&lt;/a&gt;
-&lt;a href=&quot;http://weibo.com/math2computer&quot;&gt;微博&lt;/a&gt;
-&lt;/div&gt;</p>
-<p>&lt;div class=&quot;code-caption&quot;&gt;
-&lt;/div&gt;</p>
+                <div style="background: #715d5d; padding: 10px; height: 120px"><br>    程序猿，攻城獅，算法競賽醬油選手，業餘歌手，競技體育愛好者，動漫迷，電影帝，連續劇控，自由意志主義者。<br></div>
+
+<div style="background: beige; margin: 10px 0; padding: 10px"><br>    <a href="https://github.com/Kensuke-Hinata" target="_blank" rel="external">Github</a><br>    <a href="https://www.douban.com/people/redocpot/" target="_blank" rel="external">豆瓣</a><br>    <a href="https://www.zhihu.com/people/kensuke-hinata/activities" target="_blank" rel="external">知乎</a><br>    <a href="http://weibo.com/math2computer" target="_blank" rel="external">微博</a><br></div>
+
+<div class="code-caption"><br></div>
 
 
                 

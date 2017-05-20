@@ -92,31 +92,17 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                
+                <% for (var i in theme.menu){ %>
                     <li>
-                        <a href="/">
-                            
-                                Home
-                            
+                        <a href="<%- theme.menu[i].url ? url_for(theme.menu[i].url) : url_for(theme.menu[i]) %>">
+                            <% if (theme.menu[i].icon) { %>
+                                <i class="fa fa-<%= theme.menu[i].icon %> fa-stack-2x"></i>
+                            <% } else { %>
+                                <%= i %>
+                            <% } %>
                         </a>
                     </li>
-                
-                    <li>
-                        <a href="/archives">
-                            
-                                Archives
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="https://github.com/Kensuke-Hinata">
-                            
-                                <i class="fa fa-github fa-stack-2x"></i>
-                            
-                        </a>
-                    </li>
-                
+                <% } %>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -128,14 +114,14 @@
     <!-- Main Content -->
     <!-- Page Header -->
 <!-- Set your background image for this header in the theme's configuration: index_cover -->
-<header class="intro-header" style="background-image: url('http://oksrh6vro.bkt.clouddn.com/fujisan.jpg'); height: 400px;">
+<header class="intro-header" style="background-image: url('<%- theme.index_cover %>'); height: 400px;">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>程式世界</h1>
+                    <h1><%- config.title %></h1>
                     <hr class="small">
-                    <span class="subheading">算法迷 編程語言愛好者</span>
+                    <span class="subheading"><%- config.subtitle %></span>
                 </div>
             </div>
         </div>
@@ -146,57 +132,11 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2017/04/26/又大了一歲/">
-        <h2 class="post-title">
-            又大了一歲
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-04-26
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/01/31/新的一年/">
-        <h2 class="post-title">
-            新的一年
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-01-31
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2015/07/13/說說執行力/">
-        <h2 class="post-title">
-            說說執行力
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2015-07-13
-    </p>
-</div>
-<hr>
-            
+            <% page.posts.each(function(item){ %>
+                <%- partial('_partial/article-index', {item: item}) %>
+            <% }); %>
 
-            <ul class="pager">
-    
-    
-</ul>
+            <%- partial('_partial/pagination') %>
         </div>
     </div>
 </div>
